@@ -1,22 +1,34 @@
 ﻿using UnityEngine;
 
-using Game.Animation;
+using Game.Data;
 
 namespace Game
 {
     class CubeSpawner : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private Cube _prefab;
+        [SerializeField] private CubeSpawnerData _data;
         [SerializeField] private Transform _spawnPoint;
-        [SerializeField] private Animator<Transform> _spawnAnimation;
 
-        public Cube Spawn()
+        public Cube SpawnRandom()
         {
-            var cube = Instantiate(_prefab, _spawnPoint.position, Quaternion.identity);
-            cube.Initialize(8, Color.black);
+            var randomNumber = _data.NumberGenerator.Generate();
+            return Spawn(randomNumber);
+        }
 
-            _spawnAnimation?.Animate(cube.transform);
+        private Cube Spawn(int number)
+        {
+            var index = _data.NumberGenerator.GetIndex(number);
+            var color = _data.Colors.GetColor(index);
+
+            return Spawn(_spawnPoint.position, number, color);
+        }
+        private Cube Spawn(Vector3 position, int number, Color color)
+        {
+            var cube = Instantiate(_data.Prefab, position, Quaternion.identity);
+            cube.Initialize(number, color);
+
+            _data.SpawnAnimation?.Animate(cube.transform);
 
             return cube;
         }

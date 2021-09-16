@@ -24,7 +24,7 @@ namespace Game
         }
         private void SpawnCube()
         {
-            var cube = _spawner.Spawn();
+            var cube = _spawner.SpawnRandom();
             _sling.Attach(cube);
         }
     }

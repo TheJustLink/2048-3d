@@ -35,13 +35,12 @@ namespace Game
         {
             _rigidbody.constraints =
                   RigidbodyConstraints.FreezePositionY
-                & RigidbodyConstraints.FreezePositionZ;
-            _rigidbody.freezeRotation = true;
+                | RigidbodyConstraints.FreezePositionZ
+                | RigidbodyConstraints.FreezeRotation;
         }
         public void DisableKinematic()
         {
             _rigidbody.constraints = RigidbodyConstraints.None;
-            _rigidbody.freezeRotation = false;
         }
 
         private void SetColor(Color color)

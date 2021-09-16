@@ -2,6 +2,7 @@
 
 using UnityEngine;
 
+using Game.Data;
 using Game.Input;
 
 namespace Game
@@ -10,7 +11,7 @@ namespace Game
     {
         public event Action Detached;
 
-        [SerializeField] private float _shootForce;
+        [SerializeField] private CubeSlingData _data;
 
         private Cube _cube;
         private Transform _cubeTransform;
@@ -38,7 +39,7 @@ namespace Game
             _touchInput = null;
 
             _cube.DisableKinematic();
-            _cube.Push(_shootForce);
+            _cube.Push(_data.PushForce);
             _cube = null;
 
             Detached?.Invoke();

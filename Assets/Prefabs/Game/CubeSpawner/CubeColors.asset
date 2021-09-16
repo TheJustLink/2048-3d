@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb82f01f024c9c4d9901f348b789329, type: 3}
+  m_Name: CubeColors
+  m_EditorClassIdentifier: 
+  _colors:
+  - serializedVersion: 2
+    rgba: 4282419914
+  - serializedVersion: 2
+    rgba: 4283745219
+  - serializedVersion: 2
+    rgba: 4283810207
+  - serializedVersion: 2
+    rgba: 4283744353
+  - serializedVersion: 2
+    rgba: 4286365780
+  - serializedVersion: 2
+    rgba: 4289052756
+  - serializedVersion: 2
+    rgba: 4290819412
+  - serializedVersion: 2
+    rgba: 4290806612
+  - serializedVersion: 2
+    rgba: 4290796628
+  - serializedVersion: 2
+    rgba: 4290794611
+  - serializedVersion: 2
+    rgba: 4290794649
+  - serializedVersion: 2
+    rgba: 4290794685
+  - serializedVersion: 2
+    rgba: 4287059136
+  - serializedVersion: 2
+    rgba: 4284044480
+  - serializedVersion: 2
+    rgba: 4281479030
+  - serializedVersion: 2
+    rgba: 4280426583
+  - serializedVersion: 2
+    rgba: 4279308083
+  - serializedVersion: 2
+    rgba: 4279045154
+  - serializedVersion: 2
+    rgba: 4278190080
