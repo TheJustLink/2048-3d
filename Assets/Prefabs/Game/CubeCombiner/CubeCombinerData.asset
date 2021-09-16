@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _numberGenerator: {fileID: 11400000, guid: 707bdc10fc1ad7b41bfcaad3f5ef8c6c, type: 2}
   _colors: {fileID: 11400000, guid: ab5770aea5086d6479bf6bafd333043e, type: 2}
+  _pushUpForce: 5
