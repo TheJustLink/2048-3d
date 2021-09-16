@@ -2,7 +2,7 @@
 
 using DG.Tweening;
 
-namespace Game.Animation
+namespace Game.Scriptables.Animation
 {
     [CreateAssetMenu(menuName = "Game/Animations/Transform/Scale")]
     class ScaleAnimation : Animator<Transform>

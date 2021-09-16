@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Game.Data
+namespace Game.Scriptables
 {
-    [CreateAssetMenu(menuName = "Game/Data/CubeSling")]
+    [CreateAssetMenu(menuName = "Game/CubeSling")]
     class CubeSlingData : ScriptableObject
     {
         public float PushForce => _pushForce;

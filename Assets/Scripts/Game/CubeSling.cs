@@ -2,14 +2,14 @@
 
 using UnityEngine;
 
-using Game.Data;
+using Game.Scriptables;
 using Game.Input;
 
 namespace Game
 {
     class CubeSling : MonoBehaviour
     {
-        public event Action Detached;
+        public event Action<Cube> Detached;
 
         [SerializeField] private CubeSlingData _data;
 
@@ -38,11 +38,13 @@ namespace Game
             _touchInput.Drag -= OnDragCube;
             _touchInput = null;
 
-            _cube.DisableKinematic();
-            _cube.Push(_data.PushForce);
+            var cube = _cube;
             _cube = null;
 
-            Detached?.Invoke();
+            cube.DisableKinematic();
+            cube.Push(Vector3.forward, _data.PushForce);
+
+            Detached?.Invoke(cube);
         }
 
         private void OnDragCube(Vector3 position)

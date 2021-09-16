@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
-namespace Game.Data
+namespace Game.Scriptables
 {
     [CreateAssetMenu(menuName = "Game/CubeColors")]
     class CubeColors : ScriptableObject

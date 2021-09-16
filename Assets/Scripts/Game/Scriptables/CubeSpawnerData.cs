@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-using Game.Animation;
+using Game.Scriptables.Animation;
 
-namespace Game.Data
+namespace Game.Scriptables
 {
-    [CreateAssetMenu(menuName = "Game/Data/CubeSpawner")]
+    [CreateAssetMenu(menuName = "Game/CubeSpawner")]
     class CubeSpawnerData : ScriptableObject
     {
         public Cube Prefab => _prefab;

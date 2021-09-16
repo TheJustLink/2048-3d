@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Data
+namespace Game.Scriptables
 {
     [CreateAssetMenu(menuName = "Game/CubeNumberGenerator")]
     class CubeNumberGenerator : ScriptableObject
@@ -12,8 +12,14 @@ namespace Game.Data
         public int Generate()
         {
             var randomPower = Random.Range(_startPower, _endPower);
-            return (int)Mathf.Pow(_base, randomPower);
+            return GetNumber(randomPower);
         }
+        public int GenerateNext(int number)
+        {
+            var power = GetNextPower(number);
+            return GetNumber(power);
+        }
+
         public int GetIndex(int number)
         {
             var power = GetPower(number);
@@ -21,9 +27,17 @@ namespace Game.Data
 
             return index;
         }
+        public int GetNextPower(int number)
+        {
+            return GetPower(number) + 1;
+        }
         public int GetPower(int number)
         {
             return (int)Mathf.Log(number, _base);
+        }
+        public int GetNumber(int power)
+        {
+            return (int)Mathf.Pow(_base, power);
         }
     }
 }

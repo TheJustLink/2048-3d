@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6f9cebba2c6cb479e9daba77ed1a3a, type: 3}
+  m_Name: CubeCombinerData
+  m_EditorClassIdentifier: 
+  _numberGenerator: {fileID: 11400000, guid: 707bdc10fc1ad7b41bfcaad3f5ef8c6c, type: 2}
+  _colors: {fileID: 11400000, guid: ab5770aea5086d6479bf6bafd333043e, type: 2}

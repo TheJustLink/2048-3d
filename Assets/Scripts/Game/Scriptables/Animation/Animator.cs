@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Animation
+namespace Game.Scriptables.Animation
 {
     abstract class Animator<T> : ScriptableObject
     {

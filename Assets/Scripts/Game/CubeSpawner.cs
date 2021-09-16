@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-using Game.Data;
+using Game.Scriptables;
 
 namespace Game
 {
