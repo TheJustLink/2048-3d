@@ -20,12 +20,13 @@ namespace Game
             var nextNumber = GetNextNumber(cube1);
             var nextColor = GetNextColor(nextNumber);
 
-            var duration = 1f;
             var middlePosition = GetMiddlePosition(cube1, cube2);
             var rotation = GetRotation(cube1);
 
             cube1.EnableKinematic();
             cube2.EnableKinematic();
+
+            var duration = _data.CombineDuration;
 
             DOTween.Sequence()
                 .Join(cube1.DOMove(middlePosition, duration))
@@ -39,16 +40,18 @@ namespace Game
                 .Join(cube1.DONumber(nextNumber, duration))
                 .Join(cube2.DONumber(nextNumber, duration))
 
-                .AppendCallback(() => {
-                    cube1.DisableKinematic();
-                    Destroy(cube2.gameObject);
+                .AppendCallback(() => OnCombined(cube1, cube2));
+        }
 
-                    Combined?.Invoke(cube1);
+        private void OnCombined(Cube cube1, Cube cube2)
+        {
+            cube1.DisableKinematic();
+            Destroy(cube2.gameObject);
 
-                    
-                    cube1.Push(Vector3.up, _data.PushUpForce);
-                    cube1.Rotate(UnityEngine.Random.rotation.eulerAngles);
-                });
+            Combined?.Invoke(cube1);
+
+            cube1.Push(Vector3.up, _data.PushUpForce);
+            cube1.Rotate(UnityEngine.Random.rotation.eulerAngles);
         }
 
         private Vector3 GetMiddlePosition(Cube cube1, Cube cube2)
